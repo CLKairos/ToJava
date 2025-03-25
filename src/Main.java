@@ -13,6 +13,11 @@ public class Main {
 
     public void init() {
         FileManager.saveToArray();
+        start();
+    }
+
+    public void start(){
+        
     }
 }
 
