@@ -51,7 +51,7 @@ public class Main {
                     if(debug){
                         debug("Delete Task");
                     }
-                    //deletetask();
+                    ArrayManager.deletetask();
                 }
             } catch (Exception e) {
                 System.out.println("An error occurred while getting input.");
