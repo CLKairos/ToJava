@@ -32,15 +32,31 @@ public class ArrayManager {
         }
     }
 
-    static void starttask(){
+    static void starttask() {
         try {
+            int index = -1;
             readtasks(1, 2);
             System.out.print("What do you need to start? \n");
-            String input = scn.nextLine();
-            int index = Main.todoList.indexOf(input);
-            Main.todoList.remove(index);
-            Main.startedList.add(input + "\n");
-            FileManager.saveToFile();
+            int input = scn.nextInt();
+
+            for (int i = 0; i < Main.todoList.size(); i++) {
+                String task = Main.todoList.get(i);
+                String taskNumber = task.split(": ")[0];
+
+                if (taskNumber.equals(String.valueOf(input))) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index != -1) {
+                String taskToMove = Main.todoList.remove(index);
+                Main.startedList.add(taskToMove);
+                FileManager.saveToFile();
+                System.out.println("Task started: " + taskToMove);
+            } else {
+                System.out.println("Task not found.");
+            }
         } catch (Exception e) {
             System.out.println("An error occurred while adding a task.");
             e.printStackTrace();
