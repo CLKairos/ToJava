@@ -5,7 +5,7 @@ public class Main {
     static List<String> todoList = new ArrayList<>();
     static List<String> startedList = new ArrayList<>();
     static List<String> finishedList = new ArrayList<>();
-    boolean debug = true;
+    boolean debug = false;
 
     public static void main(String[] args) {
         Main main = new Main();

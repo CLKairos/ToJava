@@ -11,7 +11,6 @@ class FileManager {
                 Main.todoList.add(data);
             }
             todoReader.close();
-
             File startedFile = new File("src/started.txt");
             Scanner startedReader = new Scanner(startedFile);
             while (startedReader.hasNextLine()) {
@@ -19,7 +18,6 @@ class FileManager {
                 Main.startedList.add(data);
             }
             startedReader.close();
-
             File finishedFile = new File("src/finished.txt");
             Scanner finishedReader = new Scanner(finishedFile);
             while (finishedReader.hasNextLine()) {

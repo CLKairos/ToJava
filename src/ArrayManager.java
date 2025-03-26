@@ -38,17 +38,14 @@ public class ArrayManager {
             readtasks(1, 2);
             System.out.print("What do you need to start? \n");
             int input = scn.nextInt();
-
             for (int i = 0; i < Main.todoList.size(); i++) {
                 String task = Main.todoList.get(i);
                 String taskNumber = task.split(": ")[0];
-
                 if (taskNumber.equals(String.valueOf(input))) {
                     index = i;
                     break;
                 }
             }
-
             if (index != -1) {
                 String taskToMove = Main.todoList.remove(index);
                 Main.startedList.add(taskToMove);
@@ -69,17 +66,14 @@ public class ArrayManager {
             readtasks(2, 3);
             System.out.print("What do you need to finish? \n");
             int input = scn.nextInt();
-
             for (int i = 0; i < Main.startedList.size(); i++) {
                 String task = Main.startedList.get(i);
                 String taskNumber = task.split(": ")[0];
-
                 if (taskNumber.equals(String.valueOf(input))) {
                     index = i;
                     break;
                 }
             }
-
             if (index != -1) {
                 String taskToMove = Main.startedList.remove(index);
                 Main.finishedList.add(taskToMove);
@@ -102,17 +96,14 @@ public class ArrayManager {
                 readtasks(1, 0);
                 System.out.print("What do you need to delete? \n");
                 int input = scn.nextInt();
-
                 for (int i = 0; i < Main.todoList.size(); i++) {
                     String task = Main.todoList.get(i);
                     String taskNumber = task.split(": ")[0];
-
                     if (taskNumber.equals(String.valueOf(input))) {
                         index = i;
                         break;
                     }
                 }
-
                 if (index != -1) {
                     Main.todoList.remove(index);
                     FileManager.saveToFile();
@@ -125,17 +116,14 @@ public class ArrayManager {
                 readtasks(2, 0);
                 System.out.print("What do you need to delete? \n");
                 int input = scn.nextInt();
-
                 for (int i = 0; i < Main.startedList.size(); i++) {
                     String task = Main.startedList.get(i);
                     String taskNumber = task.split(": ")[0];
-
                     if (taskNumber.equals(String.valueOf(input))) {
                         index = i;
                         break;
                     }
                 }
-
                 if (index != -1) {
                     Main.startedList.remove(index);
                     FileManager.saveToFile();
@@ -148,17 +136,14 @@ public class ArrayManager {
                 readtasks(3, 0);
                 System.out.print("What do you need to delete? \n");
                 int input = scn.nextInt();
-
                 for (int i = 0; i < Main.finishedList.size(); i++) {
                     String task = Main.finishedList.get(i);
                     String taskNumber = task.split(": ")[0];
-
                     if (taskNumber.equals(String.valueOf(input))) {
                         index = i;
                         break;
                     }
                 }
-
                 if (index != -1) {
                     Main.finishedList.remove(index);
                     FileManager.saveToFile();
