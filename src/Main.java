@@ -46,7 +46,7 @@ public class Main {
                     if(debug){
                         debug("Finish Task");
                     }
-                    //finishtask();
+                    ArrayManager.finishtask();
                 } if (input == 5){
                     if(debug){
                         debug("Delete Task");
